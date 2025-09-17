@@ -50,3 +50,9 @@
 * **O(m + n)** (độ phức tạp tuyến tính)
 
 ---
+
+## Links
+
+https://www.coursera.org/learn/algorithms-graphs-data-structures
+https://www.youtube.com/watch?v=HZ5YTanv5QE
+https://www.youtube.com/watch?v=xlVX7dXLS64
