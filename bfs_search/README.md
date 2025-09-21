@@ -1,43 +1,44 @@
 
-## 📘 Nội dung bài giảng
 
-1. **Giới thiệu BFS (Breadth-First Search)**
+## 📘 Lecture Content
 
-   * Khám phá đồ thị theo từng “lớp” (layers).
-   * Ứng dụng trong việc tính **đường đi ngắn nhất** và tìm **thành phần liên thông**.
-   * Thời gian chạy: **O(m + n)** (tuyến tính theo số cạnh + số đỉnh).
+1. **Introduction to BFS (Breadth-First Search)**
 
-2. **Giả mã thuật toán BFS**
+   * Explore the graph layer by layer.
+   * Applications: computing the **shortest path** and finding **connected components**.
+   * Running time: **O(m + n)** (linear in the number of edges + vertices).
 
-   * Khởi tạo: đánh dấu đỉnh bắt đầu là explored, cho vào hàng đợi (queue).
-   * Vòng lặp: lấy phần tử đầu tiên ra khỏi queue, duyệt tất cả cạnh (v, w).
+2. **BFS Algorithm Pseudocode**
 
-     * Nếu w chưa được khám phá → đánh dấu explored, đưa vào queue.
-   * Queue là **FIFO** (First In, First Out).
+   * Initialization: mark the starting vertex as explored, put it into a queue.
+   * Loop: remove the first element from the queue, traverse all edges (v, w).
 
-3. **Các tính chất cơ bản**
+     * If w has not been explored → mark it as explored and put it into the queue.
+   * The queue is **FIFO** (First In, First Out).
 
-   * **Claim 1:** BFS tìm chính xác tập các đỉnh reachable từ đỉnh s.
-   * **Claim 2:** Thời gian vòng lặp chính là **O(ns + ms)**, với ns = số đỉnh reachable, ms = số cạnh reachable.
+3. **Basic Properties**
 
-4. **BFS và Shortest Path**
+   * **Claim 1:** BFS correctly finds the set of vertices reachable from source s.
+   * **Claim 2:** Running time of the main loop is **O(ns + ms)**, where ns = number of reachable vertices, ms = number of reachable edges.
 
-   * Định nghĩa **dist(v)** = số cạnh ít nhất trên đường đi từ s đến v.
-   * Khi duyệt cạnh (v, w): nếu w chưa explored → `dist(w) = dist(v) + 1`.
-   * Kết quả: dist(v) = i ⇔ v nằm ở lớp i (tương ứng với số cạnh trong đường đi ngắn nhất).
+4. **BFS and Shortest Path**
 
-5. **Ứng dụng: Connected Components (đồ thị vô hướng)**
+   * Define **dist(v)** = the minimum number of edges on the path from s to v.
+   * While traversing edge (v, w): if w is unexplored → `dist(w) = dist(v) + 1`.
+   * Result: dist(v) = i ⇔ v belongs to layer i (corresponding to the number of edges in the shortest path).
 
-   * Định nghĩa thành phần liên thông: tập đỉnh mà giữa mọi cặp đều có đường đi.
-   * Cách làm:
+5. **Application: Connected Components (undirected graph)**
 
-     * Khởi tạo tất cả đỉnh chưa explored.
-     * Duyệt qua tất cả các đỉnh, nếu chưa explored → chạy BFS(G, i) để tìm thành phần liên thông chứa i.
-   * Thời gian chạy tổng: **O(m + n)**.
+   * Definition of connected component: a set of vertices where every pair is connected by a path.
+   * Method:
+
+     * Initialize all vertices as unexplored.
+     * Traverse all vertices; if a vertex is unexplored → run BFS(G, i) to find the connected component containing i.
+   * Total running time: **O(m + n)**.
 
 ---
 
-## 🔑 Từ khóa quan trọng
+## 🔑 Key Terms
 
 * **Graph primitives**
 * **Breadth-First Search (BFS)**
@@ -47,12 +48,13 @@
 * **Shortest paths**
 * **dist(v)**
 * **Connected components**
-* **O(m + n)** (độ phức tạp tuyến tính)
+* **O(m + n)** (linear complexity)
 
 ---
 
 ## Links
 
-https://www.coursera.org/learn/algorithms-graphs-data-structures
-https://www.youtube.com/watch?v=HZ5YTanv5QE
-https://www.youtube.com/watch?v=xlVX7dXLS64
+[https://www.coursera.org/learn/algorithms-graphs-data-structures](https://www.coursera.org/learn/algorithms-graphs-data-structures)
+[https://www.youtube.com/watch?v=HZ5YTanv5QE](https://www.youtube.com/watch?v=HZ5YTanv5QE)
+[https://www.youtube.com/watch?v=xlVX7dXLS64](https://www.youtube.com/watch?v=xlVX7dXLS64)
+
